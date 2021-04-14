@@ -11,7 +11,10 @@ router.get('/', function(req, res, next) {
 router.get('/', mainController.index); 
 router.get('/register', mainController.register);
 router.get('/login', mainController.login);
-router.get('/product', mainController.product);  
-
+router.get('/product', mainController.product);
+router.get('/product-add', mainController.productAdd);
+router.get('/profile', mainController.profile);
+router.get('/profile-edit', mainController.profileEdit);
+router.get('/search-results', mainController.searchResults);
 
 module.exports = router;

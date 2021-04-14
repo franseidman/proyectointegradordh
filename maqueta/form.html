@@ -1,0 +1,32 @@
+<!DOCTYPE HTML 5>
+<html>
+    <head>
+            <title>Ingreso Image Web</title>
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body class="sss">
+        <script src="Ingreso.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="Ingreso.css" type="text/css">
+        <div class="todo">
+            <form id="ingresoform" name="ingfor">
+                <fieldset>
+                    <legend id="titulo" class="Llc">Información de Ingreso</legend>
+                    <span id="adv" class="Llcc">Complete los campos tanto para Registro como para Login</span>
+                    <div class="marcd" id="primdiv">
+                        <label class="Llc">Nombre de usuario:</label>
+                        <input type="text" name="nom" id="n1" placeholder="Ingreso únicamente su primer nombre..." onblur="validarN()" onmouseover="valiarUlti()" class="" onfocus="focusN()">
+                        <span id="nerror" class="msjerror"></span>
+                    </div>
+                    <div class="marcd">
+                        <label class="Llc">Correo:</label>
+                        <input type="text" name="co" id="c1" placeholder="E-mail..." onblur="validarC()" onmouseover="validarUlti()" class="" onfocus="focusC()">
+                        <span id="cerror" class="msjerror"></span>
+                    </div>
+                    <input type="submit" class="no" id="botonFin" value="Iniciar Sesión" disabled onmouseover="validarUlti()" onclick="Login()">
+                    <input type="reset" class="sis" id="botonFin" value="Limpiar" onclick="LimpiaTodo()">
+                    <input type="submit" class="regi" id="botonFiin" value="Primer Registro" disabled onmouseover="validarUlti()" onclick="Registra()">
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
