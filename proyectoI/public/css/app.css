@@ -1,5 +1,8 @@
 /*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@1&display=swap');
+
 
 
 /*====== Variables ======*/
@@ -43,6 +46,7 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
+  font-family: 'Ubuntu Mono', 'Roboto', sans-serif;
 }
 
 figure {
@@ -64,6 +68,9 @@ hr {
   border-bottom: solid 1px var(--light-gray);
 }
 
+h2 {
+  font-family: 'Oswald', 'Roboto', sans-serif;
+}
 
 /*====== Main Header ======*/
 .main-header {
@@ -196,6 +203,7 @@ hr {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  font-family: 'Roboto';
 }
 
 .product-box_data h2 {
