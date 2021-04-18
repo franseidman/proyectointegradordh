@@ -541,7 +541,7 @@ textarea.form-input {
 .headerVideo {
   position: relative;
   background-color: black;
-  height: 50vh;
+  height: 500px;
   min-height: 25rem;
   width: 100%;
   overflow: hidden;
@@ -585,4 +585,11 @@ header .overlay {
   header video {
     display: none;
   }
+}
+
+/*====== CLASS CHEVRON ======*/
+.chevron{
+  margin-top: -60px;
+  margin-bottom: 130px;
+  opacity: 0.3;
 }
