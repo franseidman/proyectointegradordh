@@ -18,7 +18,7 @@ const mainController = {
         return res.render('profile')
     },*/
     profileEdit: function(req, res){
-        return res.render('profileEdit')
+        return res.render('profile-edit')
     },
     searchResults: function(req, res){
         return res.render('search-results')
