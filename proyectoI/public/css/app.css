@@ -484,6 +484,12 @@ textarea.form-input {
   color: #fff;
 }
 
+.nomylogo{
+padding-left: 50px;
+font-size: 15px;
+font-weight: bold;
+}
+
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
