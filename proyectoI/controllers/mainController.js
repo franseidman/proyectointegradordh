@@ -8,17 +8,17 @@ const mainController = {
     login: function(req, res){
         return res.render('login')
     },
-    product: function(req, res){
+    /*product: function(req, res){
         return res.render('product')
-    },
+    },*/
     productAdd: function(req, res){
         return res.render('product-add')
     },
-    profile: function(req, res){
+    /*profile: function(req, res){
         return res.render('profile')
-    },
+    },*/
     profileEdit: function(req, res){
-        return res.render('profile-edit')
+        return res.render('profileEdit')
     },
     searchResults: function(req, res){
         return res.render('search-results')
