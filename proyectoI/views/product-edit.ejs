@@ -6,33 +6,31 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/header.ejs')%>
+	<%- include('./partials/headerLogueado')%>
 	<!-- /Header -->
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Ingresar</h2>
+				<h2 class="products-title">Editar producto</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
-				<div class="todo">
+			<h2 class="col-12">
 				<form id="ingresoform" name="ingfor">
 					<fieldset>
-						<legend id="titulo" class="Llc"></legend>
+						<legend id="titulo" class="Llc"></legend> 
 						<div class="marcd" id="primdiv">
-							<label class="Llc">Nombre de usuario:</label>
+							<label class="Llc">Nombre del reloj: </label>
 							<input type="text" name="nom" id="n1">
 						</div>
-						<div class="marcd">
-							<label class="Llc">Constraseña:</label>
-							<input type="password" name="co" id="c1">
+                        <div class="marcd" id="primdiv">
+							<label class="Llc">Descripción: </label>
+							<input type="text" name="nom" id="n1">
 						</div>
-						<input type="submit" class="no" id="botonFin" value="Iniciar Sesión" onmouseover="validarUlti()" onclick="Login()">
+						<input type="submit" class="no" id="botonFin" value="Agregar reloj" onmouseover="validarUlti()" onclick="Login()">
 					</fieldset>
 				</form>
-				</div>
 			</h2>
 
 
