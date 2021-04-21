@@ -75,7 +75,7 @@ VALUES
 (default, "Son los únicos relojes que me gustan. Este modelo en concreto es precioso, un reloj para vestir con tu toque informal.", null, 4, 4),
 (default, "Muy buen producto!", null, 1, 6),
 (default, "Mucha calidad", null, 2, 2),
-(default, "Deberían trabajar en mejoras... pero es muy bueni igualmente", null, 3, 2),
+(default, "Deberían trabajar en mejoras... pero es muy bueno igualmente", null, 3, 2),
 (default, "Después de varios meses de uso estoy muy contento con él. Contra mayor uso más bonita se pone la correa. Además se ve la hora con total claridad.", null, 4, 9),
 (default, "Muy buen producto!", null, 1, 1),
 (default, "Pésimo producto, muy caro para nada", null, 2, 1),
