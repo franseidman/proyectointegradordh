@@ -97,6 +97,10 @@ h2 {
   align-items: center;
 }
 
+.otra{
+  margin-left: 380px;
+}
+
 .search-form_input {
   border: solid 1px var(--light-gray);
   display: block;
