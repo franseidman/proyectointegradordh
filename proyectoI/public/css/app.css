@@ -299,6 +299,7 @@ h2 {
 
 .footer-data p {
   color: #cacaca;
+  color: black;
   font-size: 1.5em;
   font-weight: 300;
 }
@@ -602,7 +603,8 @@ textarea.form-input {
   }
 
   .main-footer {
-    background-color: rgb(100, 100, 100);
+    background-color: rgb(173, 173, 173);
+    background-color: var(--light-gray);
     padding: 40px 0;
   }
 
