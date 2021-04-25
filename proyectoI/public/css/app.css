@@ -95,10 +95,12 @@ h2 {
   position: relative;
   display: flex;
   align-items: center;
+  
 }
 
 .otra{
-  margin-left: 380px;
+  margin-left: 640px;
+  width: 300px;
 }
 
 .search-form_input {
@@ -109,6 +111,7 @@ h2 {
   border-radius: 3px;
   height: 40px;
   font-size: 1.5em;
+  border-radius: 5px;
 }
 
 .search-form_button {
@@ -150,6 +153,7 @@ h2 {
   border: 0px;
   cursor: pointer;
   font-size: 1em;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .logout:hover{
@@ -288,13 +292,13 @@ h2 {
 }
 
 .footer-data h2 {
-  color: var(--gray);
+  color: #cacaca;
   font-size: 2.4em;
   font-weight: 400;
 }
 
 .footer-data p {
-  color: var(--gray);
+  color: #cacaca;
   font-size: 1.5em;
   font-weight: 300;
 }
@@ -334,13 +338,60 @@ h2 {
   font-weight: 400;
   font-size: 2.8em;
 }
-
+.product-detail-description-noedit{
+  background-color: rgba(235, 235, 235, 0.644);
+  border-radius: 5px;
+  width: 98%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  margin: -10px 10px 0px 15px;
+}
+.desc-prod{
+  margin-left: 6px;
+}
 .product-detail-description {
-  padding: 15px 15px 15px 40px;
-  font-size: 1.8em;
+  background-color: rgb(218, 218, 218);
+  border-radius: 15px;
+  margin-left: 845px;
+  margin-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 10px;
   line-height: 1.5;
 }
-
+.product-detail-description:hover{
+  background-color: rgb(196, 196, 196);
+  
+}
+.edit-prod{
+  font-family: 'Montserrat', sans-serif;
+}
+.img-prod{
+  padding-left: 15px;
+}
+.foot-payment{
+  margin: auto;
+  width: 650px;
+}
+.container-crypto{
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  width: 200px;
+}
+.img1{
+  margin-right: -15px;
+  z-index: 1;
+}
+.img2{
+  z-index: 3;
+}
+.img3{
+  z-index: 1;
+  margin-left: -15px;
+}
 .product-detail-price {
   font-size: 5.5em;
   margin: 10px 0;
@@ -491,9 +542,18 @@ textarea.form-input {
 }
 
 .nomylogo{
-padding-left: 50px;
-font-size: 15px;
-font-weight: bold;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.nombres{
+  margin: auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.aa{
+  margin: auto;
+  font-size: 15px;
 }
 
 
@@ -519,11 +579,13 @@ font-weight: bold;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    
   }
 
   .left-navbar a,
   .right-navbar a {
     border-bottom: none;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .left-navbar a:hover,
@@ -540,6 +602,7 @@ font-weight: bold;
   }
 
   .main-footer {
+    background-color: rgb(100, 100, 100);
     padding: 40px 0;
   }
 
@@ -609,7 +672,104 @@ header .overlay {
   font-size: 12px;
   margin: auto;
 }
+.divform{
+  border-radius: 25px;
+  background-color: #dfdfdf;
+}
+.marcd{
+  margin-top: 10px;
+  margin-left: 370px;
+  font-family: 'Montserrat', sans-serif;
+}
+.marcd1{
+  padding-top: 20px;
+  margin-left: 370px;
+  font-family: 'Montserrat', sans-serif;
+}
+.marcd2{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 370px;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .divterminos{
+  margin-left: 370px;
+  font-family: 'Montserrat', sans-serif;
   margin-top: 25px;
   margin-bottom: 10px;
+}
+.inp1{
+  margin-left: 20px;
+}
+.inp2{
+  margin-left: 114px;
+}
+.inp3{
+  margin-left: 7px;
+}
+.inp4{
+  margin-left: 114px;
+}
+.inp5{
+  margin-left: 100px;
+}
+.inpp{
+  width: 200px;
+  border-radius: 4px;
+  border-color: transparent;
+}
+.inpp1{
+  margin-left: 30px;
+}
+.inpp2{
+  margin-left: 124px;
+}
+.inpp3{
+  margin-left: 80px;
+}
+.inpp4{
+  margin-left: 2px;
+}
+.inpp5{
+  margin-left: 17px;
+}
+.inpp6{
+  margin-left: 5px;
+}
+.inpp7{
+  margin-left: 110px;
+}
+.inppp1{
+  margin-left: 10px;
+}
+.inppp2{
+  margin-left: 60px;
+}
+.inpppp1{
+  margin-left: 10px;
+}
+.inpppp2{
+  margin-left: 47px;
+}
+.inpppp3{
+  margin-left: 45px;
+}
+.noa{
+  margin-left: 350px;
+  margin-top: 40px;
+  padding-bottom: 15px;
+}
+.noar{
+  margin-left: 450px;
+  margin-top: 40px;
+  padding-bottom: 15px;
+}
+.bot{
+  width: 200px;
+  border-radius: 4px;
+  border-color: transparent;
+}
+.bot:hover{
+  background-color: rgb(180, 180, 180);
 }

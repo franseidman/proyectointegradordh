@@ -2,6 +2,12 @@
 <html lang="es">
 <!-- Include Head -->
 <%- include('./partials/head')%>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+</style>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+</style>
 <body>
 	<!-- Header -->
 	<%- include('./partials/headerLogueado.ejs')%>
@@ -70,15 +76,18 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title">Rolex Yacht-Master II</h2> 
 			<p class="product-detail-description">
-				<a href="/product/edit">Editar</a>
+				<a class="edit-prod" href="/product/edit">Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
+					<div class="img-prod">
 					<img src="images/products/Rolex2.jpg" alt="Rolex">
-					<p class="product-detail-description">
-						Inspirado en el rico patrimonio que ha unido Rolex con el mundo de la navegación desde los años cincuenta, el Yacht‑Master II reúne la excelente tecnología de Rolex para crear un cronógrafo de regata diseñado para las competiciones de vela.</p>
+					</div>
+					<div class="product-detail-description-noedit">
+					<p class="desc-prod">
+						Inspirado en el rico patrimonio que ha unido Rolex con el mundo de la navegación desde los años cincuenta, el Yacht‑Master II reúne la excelente tecnología de Rolex para crear un cronógrafo de regata diseñado para las competiciones de vela.</p></div>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">

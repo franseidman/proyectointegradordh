@@ -19,22 +19,23 @@
 			<h2 class="col-12"> 
 				<div class="todo">
 				<form id="ingresoform" name="ingfor">
-					<fieldset>
-						<legend id="titulo" class="Llc"></legend>
-						<div class="marcd" id="primdiv">
+					<div class="divform">
+						<div class="marcd1" id="primdiv">
 							<label class="Llc">Nombre de usuario:</label>
-							<input type="text" name="nom" id="n1">
+							<input class="inpp inppp1" type="text" name="nom" id="n1">
 						</div>
-						<div class="marcd">
+						<div class="marcd2">
 							<label class="Llc">Constraseña:</label>
-							<input type="password" name="co" id="c1">
+							<input class="inpp inppp2" type="password" name="co" id="c1">
 						</div>
-						<input type="submit" class="no" id="botonFin" value="Iniciar Sesión" onmouseover="validarUlti()" onclick="Login()">
-					</fieldset>
+						<div class="noar">
+						<input type="submit" class="bot" value="Iniciar Sesión"></div>
+					</div>
 				</form>
 				</div>
 			</h2>
-
+		</div>
+	</div>
 
 	<!-- footer -->
 	<%- include('./partials/footer.ejs')%>
