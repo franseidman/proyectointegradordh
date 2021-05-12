@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UdeSA Movies</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>UdeSA Movies</h1>
+    <p>Welcome to UdeSA Movies</p>
+    <ul>
+      <% for(let i=0; i<users.length; i++){ %>
+        <li>
+          <a href="/users/detail/<%= users[i].id%>"><%= users[i].username %></a> 
+        </li>
+      <% } %>
+    </ul>
+  </body>
+</html>

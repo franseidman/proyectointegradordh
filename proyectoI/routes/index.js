@@ -6,5 +6,6 @@ router.get('/', mainController.index);
 router.get('/register', mainController.register);
 router.get('/login', mainController.login);
 router.get('/search-results', mainController.searchResults);
+router.get('/detail/:id', mainController.show);
 
 module.exports = router;
