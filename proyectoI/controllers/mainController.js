@@ -3,7 +3,12 @@ const op = db.Sequelize.Op
 
 const mainController = {
     index: function(req, res){
-        return res.render('index')
+        db.User.findAll()
+            .then(data =>{
+                console.log(data);
+                return res.render('index', { users: data });
+            })
+        //return res.render('index')
     },
     register: function(req, res){
         return res.render('register')

@@ -20,7 +20,7 @@ module.exports = function(sequelize, dataTypes){
 
     let config = { //Configuracion adicional
         tableName: "comments",
-        timesstamps: false, //Si la tabla no tiene los campos created_at y updated_at
+        timestamps: false, //Si la tabla no tiene los campos created_at y updated_at
     }
 
     const Comment = sequelize.define(alias, cols, config); //Sequelize use el metodo define que se ejecuta dentro del parametro sequelize
