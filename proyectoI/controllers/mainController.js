@@ -37,6 +37,22 @@ const mainController = {
             })
         
     } ,
-}
+    search: function(req, res){
+        let infoABuscar = req.query.search; //obtengo la info de la querystring.
 
+        db.Product.findAll({
+            //SELECT * FROM movies
+            //WHERE title LIKE "%potter%"
+            where: [
+                { nombre: {[op.like]: '%'+infoABuscar+'%'}}
+            ]})
+            .then( data => {
+                return res.render('search-results',{products: data});
+            })
+            .catch( error => {
+                console.log(error);
+            })
+    }
+}
+//hola
 module.exports = mainController
