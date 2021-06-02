@@ -22,6 +22,10 @@ module.exports = function(sequelize, dataTypes){
         descripcion:{
             type: dataTypes.STRING
         },
+        user_id:{
+            type: dataTypes.INTEGER
+        }
+
     }
 
     let config = { //Configuracion adicional

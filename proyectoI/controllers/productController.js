@@ -29,6 +29,7 @@ const productController = {
         
         //2)Crear pelicula nueva.
         let product = {           
+            user_id: 1,
             imagen: data.imagen,
             nombre: data.nombre,
             creacion: data.creacion,
