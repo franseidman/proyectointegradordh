@@ -19,19 +19,19 @@
 
 			<h2 class="col-12"> 
 				<div class="todo">
-				<form id="ingresoform" name="ingfor">
+				<form id="ingresoform" name="ingfor" action="/product/store" method="POST">
 					<div class="divform">
 						<div class="marcd1" id="">
 							<label class="">Nombre del reloj:</label>
-							<input class="inpp inpppp1" type="text" name="nom" id="n1">
+							<input class="inpp inpppp1" type="text" name="nombre" id="n1">
 						</div>
 						<div class="marcd">
 							<label class="">Descripción:</label>
-							<input class="inpp inpppp2" type="email" name="co" id="c1">
+							<input class="inpp inpppp2" type="text" name="descripcion" id="c1">
 						</div>
 						<div class="marcd2">
 							<label class="">Link imagen</label>
-							<input class="inpp inpppp3" type="password" name="co" id="c1">
+							<input class="inpp inpppp3" type="text" name="imagen" id="c1">
 						</div>
 						<div class="divterminos">
 						</div>
@@ -44,6 +44,22 @@
 
 		</div>
 	</div>
+	<form action="/movies/store" method="POST">
+		<div>	
+		  <input type="text" name="title" value="" placeholder="title">
+		</div>
+		<div>
+		  <input type="number" name="rating" value="" placeholder="rating">
+		</div>
+		<div>
+		  <input type="number" name="awards" value="" placeholder="awards">
+		</div>
+		<div>
+		  <input type="date" name="release_date" value="" placeholder="release date">
+		</div>
+		<div>
+		  <input type="number" name="length" value="" placeholder="length">
+  
 	<!-- footer -->
 	<%- include('./partials/footer.ejs')%>
 	<!-- /footer -->
