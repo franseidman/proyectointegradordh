@@ -52,6 +52,19 @@ const mainController = {
             .catch( error => {
                 console.log(error);
             })
+    },
+    novedades: function(req, res){
+        //let infoABuscar = req.query.search; //obtengo la info de la querystring.
+
+        db.Product.findAll({
+            //SELECT * FROM movies
+            })
+            .then( data => {
+                return res.render('index',{products: data}); //se la mandamos a la vista adentro de un objeto
+            })
+            .catch( error => {
+                console.log(error);
+            })
     }
 }
 //hola

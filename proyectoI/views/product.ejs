@@ -16,9 +16,12 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title">Rolex Yacht-Master II</h2> 
+			<h2 class="products-title"><%= detalle.nombre %></h2> 
 			<p class="product-detail-description">
 				<a class="edit-prod" href="/product/edit">Editar</a>
+				<form action="/product/delete/<%=  %>" method="POST">
+					<button type="submit">Borrar</button>
+				</form>
 			</p>
 		</div>
 		<div class="product-detail">
