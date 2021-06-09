@@ -19,7 +19,7 @@
 			<h2 class="products-title"><%= detalle.nombre %></h2> 
 			<p class="product-detail-description">
 				<a class="edit-prod" href="/product/edit">Editar</a>
-				<form action="/product/delete/<%=  %>" method="POST">
+				<form action="/product/delete/<%= detalle.id %>" method="POST">
 					<button type="submit">Borrar</button>
 				</form>
 			</p>
@@ -28,12 +28,13 @@
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
 					<div class="img-prod">
-					<img src="images/products/Rolex2.jpg" alt="Rolex">
+					<img src="images/products/<%= detalle.imagen %>" alt="Detalle Imagen">
 					</div>
 					<div class="product-detail-description-noedit">
 					<p class="desc-prod">
-						Inspirado en el rico patrimonio que ha unido Rolex con el mundo de la navegación desde los años cincuenta, el Yacht‑Master II reúne la excelente tecnología de Rolex para crear un cronógrafo de regata diseñado para las competiciones de vela.</p></div>
+						<%= detalle.descripcion %></p></div>
 				</article>
+				
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<article>
