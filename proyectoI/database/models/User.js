@@ -22,9 +22,6 @@ module.exports = function(sequelize, dataTypes){
         nacimiento:{
             type: dataTypes.DATE
         },
-        prefijo:{
-            type: dataTypes.INTEGER
-        },
         telefono:{
             type: dataTypes.INTEGER
         },
@@ -32,7 +29,8 @@ module.exports = function(sequelize, dataTypes){
 
     let config = { //Configuracion adicional
         tableName: "users",
-        timestamps: false, //Si la tabla no tiene los campos created_at y updated_at CUANDO SE CORRIJA LA DB ARMARLOS
+        timestamps: true, //Si la tabla no tiene los campos created_at y updated_at CUANDO SE CORRIJA LA DB ARMARLOS
+        underscored: true
     }
 
     const User = sequelize.define(alias, cols, config); //Sequelize use el metodo define que se ejecuta dentro del parametro sequelize

@@ -30,7 +30,8 @@ module.exports = function(sequelize, dataTypes){
 
     let config = { //Configuracion adicional
         tableName: "products",
-        timestamps: false, //Si la tabla no tiene los campos created_at y updated_at
+        timestamps: true, //Si la tabla no tiene los campos created_at y updated_at
+        underscored: true
     }
 
     const Product = sequelize.define(alias, cols, config); //Sequelize use el metodo define que se ejecuta dentro del parametro sequelize
