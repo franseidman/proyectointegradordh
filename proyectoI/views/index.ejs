@@ -31,6 +31,9 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
+				<% if(locals.user){ %>
+					<h2>Hola: <%= locals.user.username %> </h2>
+				<%}%>
 				<h2 class="products-title">Novedades</h2>
 			</div>
 			<!-- Show the "ultimos" products -->

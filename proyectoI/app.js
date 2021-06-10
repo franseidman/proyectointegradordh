@@ -4,10 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session'); 
+const db = require('./database/models');
 
 var indexRouter = require('./routes/index');
 var profileRouter = require('./routes/profile');
 var productRouter = require('./routes/product');
+var registerRouter = require("./routes/register");
+var loginRouter = require("./routes/login");
 
 var app = express();
 
@@ -21,14 +24,50 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/profile', profileRouter);
-app.use('/product', productRouter);
 app.use(session(
   { secret:'watch24',
     resave: false,
     saveUninitialized: true }
 ));
+
+app.use(function(req, res, next){
+  console.log('En session middleware');
+  console.log(req.session.user);
+  if(req.session.user != undefined){
+    res.locals.user = req.session.user;
+    console.log("entre en locals: ");
+    console.log(res.locals);
+    return next();
+  } 
+  return next(); //Clave para que el proceso siga adelante.  
+})
+
+
+app.use(function(req, res, next){
+  if(req.cookies.userId != undefined && req.session.user == undefined){
+    let idDeLaCookie = req.cookies.userId;
+    
+    db.User.findByPk(idDeLaCookie)
+    .then( user => {
+      console.log('en cookie middleware trasladando');
+      req.session.user = user; 
+      console.log('en cookie middleware');
+      console.log(req.session.user);
+      res.locals.user = user; 
+      return next();
+    })
+    .catch( e => {console.log(e)})
+  } else {
+    return next();
+  }
+})
+
+app.use("/login", loginRouter);
+app.use("/register", registerRouter);
+app.use('/', indexRouter);
+app.use('/profile', profileRouter);
+app.use('/product', productRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

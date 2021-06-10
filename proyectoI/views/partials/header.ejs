@@ -47,13 +47,19 @@
                             </button>
                         </form>
                     </li> -->
-                <li>
-                    <a href="/register">Creá tu cuenta <i class="far fa-address-card"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
-                </li>
+                    <% if(locals.user){ %>
+                        <form action="/login/logout" method="POST">
+                          <button type="submit">Logout</button>
+                        </form>
+                      <%} else {%>
+                        <li>
+                            <a href="/register">Creá tu cuenta <i class="far fa-address-card"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+                        </li>
+                      <%}%>
             </ul>
         </nav>
     </div>
