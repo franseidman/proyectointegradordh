@@ -5,8 +5,8 @@ module.exports = {
     "database": "Watch24",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    'port': '8889',
-    'password': 'root',
+    //'port': '8889',
+    //'password': 'root',
     "define": {
       "onDelete":"cascade"
     }
