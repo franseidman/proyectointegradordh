@@ -34,21 +34,30 @@
 			<nav class="main-navbar">
 				<ul class="left-navbar">
 					<li><a href="/">Todos los relojes</a></li>
-					<li><a href="/product/add">Publicar Productos</a></li>
+					<% if(locals.user){ %>
+						<li><a href="/product/add">Publicar Productos</a></li>
+                      <%}%>
 				</ul>
 	
 				<ul class="right-navbar">
-					<li><a href="/profile/id/<%= locals.user.id %> ">
+					<% if(locals.user){ %>
+						<li><a href="/profile/id/<%= locals.user.id %> ">
 							LNorris4 <i class="fas fa-user"></i>
 						</a>
-					</li>
-					<li>
-						<form action="/" method="GET">
-							<button class="logout" type="submit">
-								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
-							</button>
-						</form>
-					</li>
+						</li>
+						<form action="/login/logout" method="POST">
+                          <button type="submit">Cerrar Sesión</button>
+                        </form>
+                      <%} else {%>
+                        <li>
+                            <a href="/register">Creá tu cuenta <i class="far fa-address-card"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+                        </li>
+                      <%}%>
+
 					<!-- Solo deslogueado <li>
 						<a href="register.html">Creá tu cuenta <i class="far fa-address-card"></i>
 						</a>
