@@ -16,9 +16,6 @@ module.exports = function(sequelize, dataTypes){
         nombre:{
             type: dataTypes.STRING
         },
-        creacion:{
-            type: dataTypes.DATE
-        },
         descripcion:{
             type: dataTypes.STRING
         },

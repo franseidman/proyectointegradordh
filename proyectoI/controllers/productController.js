@@ -21,22 +21,27 @@ const productController = {
                 console.log(error);
             })
     },
-    productAdd: function(req, res){
+    /*productAdd: function(req, res){
         return res.render('product-add')
-    },
+    },*/
     productEdit: function(req, res){
         return res.render('product-edit')
     },
-    /*show: function(req, res){
+    show: function(req, res){
+         //Control de acceso
+         if(req.session.user == undefined){
+            return res.redirect("/login");
+        }else{
         //Mostrar formulario de carga de películas
         db.Product.findAll()
             .then( data => {
-                return res.render('productNew', {genres:data}); //hacer una vista nueva para los productos del usuario
+                return res.render('product-add'); //hacer una vista nueva para los productos del usuario
             })
             .catch(error => {
                 console.log(error);
             })
-    },*/
+        }
+    },
     /*show: function(req, res){
         let id = req.params.id;
 
@@ -61,10 +66,9 @@ const productController = {
         
         //2)Crear pelicula nueva.
         let product = {           
-            user_id: 1, //req.session.user_id
+            user_id: req.session.user.id, //req.session.user_id
             imagen: data.imagen,
             nombre: data.nombre,
-            creacion: data.creacion,
             descripcion: data.descripcion,
         }
         //3)Guardar película

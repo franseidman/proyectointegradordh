@@ -18,6 +18,10 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
 				<div class="todo">
+					<% if(locals.errors){ %>
+						<p style="color:red"><%= locals.errors.message %> </p>
+					<% } %>
+				
 				<form id="ingresoform" name="ingfor" action="/login" method="POST">
 					<div class="divform">
 						<div class="marcd1" id="primdiv">
