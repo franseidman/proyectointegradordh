@@ -36,6 +36,17 @@ module.exports = function(sequelize, dataTypes){
 
     const Product = sequelize.define(alias, cols, config); //Sequelize use el metodo define que se ejecuta dentro del parametro sequelize
 
+    Product.associate = function(models){
+        Product.belongsTo(models.User, {
+            as:'owner', //Como voy a llamar a la relación dentro del controlador
+            foreignKey:'user_id'
+        }),
+        Product.hasMany(models.Comment, {
+            as:'comentariosproducto', //Como voy a llamar a la relación dentro del controlador
+            foreignKey:'product_id'
+        })
+    }
+
     return Product;
 
 }

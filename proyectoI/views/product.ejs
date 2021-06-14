@@ -34,50 +34,21 @@
 					<p class="desc-prod">
 						<%= detalle.descripcion %></p></div>
 				</article>
-				
+
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<article>
-							<img src="images/users/profile.jpg" alt="profile image">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/profile">LNorris4</a> </strong>
-								 El producto presenta una gran calidad en sus materiales. Muy recomendable!!</p>
-							</div>
-						</article>
-						<article>
-							<img src="images/users/dami-adebayo-k6aQzmIbR1s-unsplash.jpg" alt="profile image">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile">jdoe</a> </strong>
-									La verdad es que me ha impresionado, luce muy bien, es muy bonito.</p>
-							</div>
-						</article>
-						<article>
-							<img src="images/users/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="profile image">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile">spaulson</a> </strong>
-									Son los únicos relojes que me gustan. Este modelo en concreto es precioso, un reloj para vestir con tu toque informal.
-									</p>
-							</div>
-						</article>
-						<article>
-							<img src="images/users/ayo-ogunseinde-sibVwORYqs0-unsplash.jpg" alt="profile image">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile">ayoseinde</a> </strong>
-									Después de varios meses de uso estoy muy contento con él. Contra mayor uso más bonita se pone la correa. Además se ve la hora con total claridad.</p>
-							</div>
-						</article>
-						<article>
-							<img src="images/users/jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="profile image">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile">jkoletic</a> </strong>
-									Producto excelente, cumple de sobra con las expectativas. Muy recomendado para alguien que quiera un reloj a buen precio y con todas las funciones que se suelen requerir. Correa duradera y cómoda, el tamaño es comedido, en ningún caso molesta, muy cómodo de llevar. Recomendado.</p>
-							</div>
-						</article>
+							<ul>
+							<% for(let i=0; i<detalle.comentariosproducto.length; i++){ %>
+								<article>
+									<img src="images/users/profile.jpg" alt="profile image">
+									<div class="data">
+										<p class="user">
+										<strong> <a href="/profile"><%= detalle.comentariosproducto[i].usuariodelcomentario.username %></a> </strong>
+										<%= detalle.comentariosproducto[i].comentario %></p>
+									</div>
+								</article>
+							<% } %> 
+							</ul>
 
 					</section>
 					<form class="form" action="/product" method="GET">

@@ -4,7 +4,16 @@ const op = db.Sequelize.Op
 
 const productController = {
     product: function(req, res){
-        db.Product.findByPk(req.params.id)
+        db.Product.findByPk(req.params.id, {
+            include : [
+                {association : 'owner'},
+                {association : 'comentariosproducto',
+            include: [
+                {association : 'usuariodelcomentario'}
+            ]}
+
+            ]
+        })
             .then( data => {
                 return res.render('product', {detalle:data});
             })
@@ -18,16 +27,33 @@ const productController = {
     productEdit: function(req, res){
         return res.render('product-edit')
     },
-    show: function(req, res){
+    /*show: function(req, res){
         //Mostrar formulario de carga de películas
         db.Product.findAll()
             .then( data => {
-                return res.render('movieNew', {genres:data}); //hacer una vista nueva para los productos del usuario
+                return res.render('productNew', {genres:data}); //hacer una vista nueva para los productos del usuario
             })
             .catch(error => {
                 console.log(error);
             })
-    },
+    },*/
+    /*show: function(req, res){
+        let id = req.params.id;
+
+        db.Product.findByPk(id, {
+            include : [
+                {association : 'owner'},
+                {association : 'comments'}
+            ]
+        })
+            .then(data =>{
+                return res.render('product', { product: data });
+            })
+            .catch(error =>{
+                console.log(error);
+            })
+        
+    },*/
     store: function(req, res){
         //Método para guardar nueva película.
         //1) Obtener datos del formulario
@@ -65,7 +91,8 @@ const productController = {
             .catch( error => { 
                 console.log(error);
             })
-    }
+    },
+
 }
 
 module.exports = productController

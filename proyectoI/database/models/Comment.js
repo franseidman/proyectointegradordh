@@ -16,6 +16,12 @@ module.exports = function(sequelize, dataTypes){
         creacion:{
             type: dataTypes.DATE
         },
+        user_id:{
+            type: dataTypes.INTEGER
+        },
+        product_id:{
+            type: dataTypes.INTEGER
+        }
     }
 
     let config = { //Configuracion adicional
@@ -24,6 +30,17 @@ module.exports = function(sequelize, dataTypes){
     }
 
     const Comment = sequelize.define(alias, cols, config); //Sequelize use el metodo define que se ejecuta dentro del parametro sequelize
+
+    Comment.associate = function(models){
+        Comment.belongsTo(models.Product, {
+            as:'comentariodeproducto', //Como voy a llamar a la relación dentro del controlador
+            foreignKey:'product_id'
+        }),
+        Comment.belongsTo(models.User, {
+            as:'usuariodelcomentario', //Como voy a llamar a la relación dentro del controlador
+            foreignKey:'user_id'
+        })
+    }
 
     return Comment;
 
