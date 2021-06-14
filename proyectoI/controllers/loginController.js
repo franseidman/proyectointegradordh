@@ -12,7 +12,7 @@ let loginController = {
         return res.render('login');
         }
     },
-    //AAAAAAAAAA
+    //AAAAAAAAAAVERSIANDAA
     login: function(req, res){
         //Buscar mail
 

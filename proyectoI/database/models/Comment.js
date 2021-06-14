@@ -13,9 +13,6 @@ module.exports = function(sequelize, dataTypes){
         comentario:{
             type: dataTypes.STRING(1000)
         },
-        creacion:{
-            type: dataTypes.DATE
-        },
         user_id:{
             type: dataTypes.INTEGER
         },

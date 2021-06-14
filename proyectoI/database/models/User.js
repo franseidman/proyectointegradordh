@@ -4,7 +4,7 @@ module.exports = function(sequelize, dataTypes){
     let alias = "User"; //Con este alias sequelize va a identificar internamente al archivo de modelo. 
 
     //Describir la configuración de las columnas de la tabla
-    let cols = { //Cada atributo debe coincidir con el nombre de la columna.
+    let cols = { //Cada atributo debe coincidir con el nombre de la columna. 
         id:{ //Adentro de cada atributo hay un objeto literal con otros atributos.
             autoincrement: true,
             primaryKey: true,
@@ -14,6 +14,9 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING
         },
         mail:{
+            type: dataTypes.STRING
+        },
+        imagen:{
             type: dataTypes.STRING
         },
         contrasena:{
