@@ -18,8 +18,11 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
 				<div class="todo">
-				<form id="ingresoform" name="ingfor" action="/register" method="POST">
+				<form id="ingresoform" name="ingfor" action="/register" method="POST" enctype="multipart/form-data">
 					<div class="divform">
+						<% if(locals.errors){ %>
+							<p style="color:red"><%= locals.errors.message %> </p>
+						<% } %>
 						<div class="marcd1" id="">
 							<label class="">Nombre de usuario:</label>
 							<input class="inpp inpp1" type="text" name="username" id="n1">
@@ -30,7 +33,7 @@
 						</div>
 						<div class="marcd">
 							<label class="">Imagen:</label>
-							<input class="inpp inpp2" type="text" name="imagen" id="c1">
+							<input class="inpp inpp2" type="file" name="imagen" id="c1">
 						</div>
 						<div class="marcd">
 							<label class="">Constraseña:</label>

@@ -5,9 +5,6 @@ const profileController = {
     profile: function(req, res){
         return res.render('profile')
     },
-    profileEdit: function(req, res){
-        return res.render('profile-edit')
-    },
     show: function(req, res){
 
         db.User.findByPk(req.params.id, {

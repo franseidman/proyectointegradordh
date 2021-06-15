@@ -83,14 +83,24 @@ const productController = {
     },
     destroy: function(req, res){
         let productABorrar = req.params.id;
-        db.Product.destroy({
-            where: [
-                {id : productABorrar}
-            ]
+        console.log(productABorrar);
+        db.Comment.destroy({
+            where: {
+                product_id: productABorrar
+            }
         })
-            .then( (id) => {
-                return res.send(id)
-                 return res.redirect('/');
+            .then(()=>{
+                db.Product.destroy({
+                    where: {
+                        id : productABorrar
+                    }
+                })
+                    .then( (id) => {
+                         return res.redirect('/');
+                    })
+                    .catch( error => { 
+                        console.log(error);
+                    })
             })
             .catch( error => { 
                 console.log(error);

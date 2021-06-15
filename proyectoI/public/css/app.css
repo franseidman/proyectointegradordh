@@ -781,3 +781,9 @@ header .overlay {
 .bot:hover{
   background-color: rgb(180, 180, 180);
 }
+.fotoPerfil{
+  width: 110px;
+  height: 110px;
+  border-radius: 100%;
+  box-shadow: 0 0 15px 0px #00ff22;
+}
