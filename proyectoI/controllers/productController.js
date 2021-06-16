@@ -10,9 +10,9 @@ const productController = {
                 {association : 'comentariosproducto',
             include: [
                 {association : 'usuariodelcomentario'}
-            ]}
-
-            ]
+            ]}],
+            order: [['comentariosproducto', 'id', 'desc']] //Propiedad order con lo configuración de orden
+    
         })
             .then( data => {
                 return res.render('product', {detalle:data});

@@ -15,11 +15,9 @@ var storage = multer.diskStorage({
    
 var upload = multer({ storage: storage })
 
-
-/* GET home page. */
 router.get('/', registerController.index);
 router.post('/', upload.single("imagen"),registerController.store);
 router.get('/edit/:id', registerController.profileEdit);
+router.post('/edit', upload.single("imagen"), registerController.update);
 
 module.exports = router;
-

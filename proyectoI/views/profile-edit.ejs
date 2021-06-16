@@ -19,15 +19,19 @@
 			<h2 class="col-12"> 
 				<div class="todo">
 					<img class="fotoPerfil" src="/images/users/<%= user.imagen %>">
-				<form id="ingresoform" name="ingfor">
+				<form id="ingresoform" name="ingfor" action="/register/edit" method="POST" enctype="multipart/form-data">
 					<div class="divform">
 						<div class="marcd1" id="primdiv">
 							<label class="Llc">Nombre de usuario:</label>
-							<input class="inp1 inpp" type="text" name="nom" id="n1" value="<%= user.username %>">
+							<input class="inp1 inpp" type="text" name="username" id="n1" value="<%= user.username %>">
 						</div>
 						<div class="marcd">
 							<label class="">Correo:</label>
-							<input class="inp2 inpp" type="email" name="co" id="c1" disabled value="<%= user.mail %>">
+							<input class="inp2 inpp" type="email" name="mail" id="c1" disabled value="<%= user.mail %>">
+						</div>
+						<div class="marcd">
+							<label class="">Constraseña:</label>
+							<input class="inpp inpp3" type="password" name="contrasena" id="c1">
 						</div>
 						<div class="marcd">
 							<label class="">Cambiar imagen de perfil:</label>
@@ -35,11 +39,11 @@
 						</div>
 						<div class="marcd">
 							<label class="">Fecha de nacimiento:</label>
-							<input class="inp3 inpp" type="date" name="co" id="c1" disabled>
+							<input class="inp3 inpp" type="date" name="nacimiento" id="c1" disabled>
 						</div>
 						<div class="marcd2">
 							<label class="">Teléfono:</label>
-							<input class="inp5 inpp" type="tel" name="co" id="c1" placeholder="XX-XXXX-XXXX" value="<%= user.telefono %>">
+							<input class="inp5 inpp" type="tel" name="telefono" id="c1" placeholder="XX-XXXX-XXXX" value="<%= user.telefono %>">
 						</input>
 						</div>
 						<div class="noa">

@@ -1,5 +1,4 @@
 const bcrypt = require('bcryptjs');
-const { request } = require('express');
 const db = require('../database/models');
 const op = db.Sequelize.Op;
 const users = db.User;
@@ -96,7 +95,42 @@ let registerController = {
                 .catch( e => {console.log(e)})
         }
     },
+    update: function(req, res){
+        
+        let user = {
+            username : req.body.username,
+            mail: req.body.mail,
+            imagen: '',
+            contrasena: '', 
+            nacimiento: req.body.nacimiento,
+            telefono: req.body.telefono,
+        }
+
+        if(req.body.contrasena == ''){
+            user.contrasena = req.session.user.contrasena;
+        } else {
+            user.contrasena = bcrypt.hashSync(req.body.contrasena, 10);
+        }
+        if(req.file == undefined){
+            user.imagen = req.session.user.imagen;
+        } else {
+            user.imagen = req.file.filename;
+        }
+
+        db.User.update(user, {
+            where:{
+                id: req.session.user.id
+            }
+        })
+            .then(function(id){
+                //Actualiza los datos de session y redirecciona a la home.
+                user.id = req.session.user.id;
+                req.session.user = user;
+                return res.redirect('/');
+                
+            })
+            .catch( e => {console.log(e)})
+    }
 }
 
 module.exports = registerController;
-
