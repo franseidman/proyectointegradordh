@@ -60,16 +60,31 @@ const productController = {
         
     },*/
     store: function(req, res){
+        console.log(req);
+        let errors={}
+        if(req.body.nombre == ""){
+            errors.message = "Es necesario un nombre de producto";
+            res.locals.errors = errors;
+            return res.render('product-add')
+        //Chequear que la contraseña no esté vacía    
+        } else if(req.body.descripcion == ""){
+            errors.message = "Es necesaria una descripción del producto";
+            res.locals.errors = errors;
+            return res.render('product-add')
+        //Chequear que la contraseña no esté vacía    
+        } else if(req.file.mimetype !== 'image/png' && req.file.mimetype !== 'image/jpg' && req.file.mimetype !== 'image/jpeg'){
+            errors.message = "El formato del archivo no es compatible";
+            res.locals.errors = errors;
+            return res.render('product-add')
+        } else{
         //Método para guardar nueva película.
         //1) Obtener datos del formulario
-        let data = req.body;
-        
         //2)Crear pelicula nueva.
         let product = {           
             user_id: req.session.user.id, //req.session.user_id
-            imagen: data.imagen,
-            nombre: data.nombre,
-            descripcion: data.descripcion,
+            imagen: req.file.filename,
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
         }
         //3)Guardar película
         db.Product.create(product)
@@ -79,7 +94,7 @@ const productController = {
             })
             .catch(error => {
                 console.log(error);
-            })
+            })}
     },
     destroy: function(req, res){
         let productABorrar = req.params.id;
