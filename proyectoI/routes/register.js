@@ -17,6 +17,7 @@ var upload = multer({ storage: storage })
 
 router.get('/', registerController.index);
 router.post('/', upload.single("imagen"),registerController.store);
+
 router.get('/edit/:id', registerController.profileEdit);
 router.post('/edit', upload.single("imagen"), registerController.update);
 

@@ -25,7 +25,53 @@ const productController = {
         return res.render('product-add')
     },*/
     productEdit: function(req, res){
-        return res.render('product-edit')
+        db.Product.findByPk(req.params.id, {
+        })
+            .then( data => {
+              
+                return res.render('product-edit', {detalle:data});
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    },
+    update: function(req, res){
+        
+        let product = {           
+            user_id: req.session.user.id, //req.session.user_id
+            imagen: req.file.filename,
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
+        }
+
+        if(req.body.nombre == ''){
+            product.nombre = detalle.nombre;
+        } else {
+            product.nombre = req.body.nombre;
+        }
+        if(req.file == undefined){
+            product.imagen = detalle.imagen;
+        } else {
+            product.imagen = req.body.imagen;
+        }
+        if(req.body.descripcion == ""){
+            product.descripcion = detalle.descripcion;
+        } else {
+            product.descripcion = req.body.descripcion;
+        }
+
+        db.Product.update(product, {
+            where:{
+                id: req.params.id
+            }
+        })
+            .then(function(id){
+                
+                //NO SABEMOS QUE FALTARÍA ESCRIBIR ACÁ
+                return res.redirect('/');
+                
+            })
+            .catch( e => {console.log(e)})  
     },
     show: function(req, res){
          //Control de acceso

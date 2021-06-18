@@ -17,18 +17,24 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
-				<form id="ingresoform" name="ingfor">
+				<form id="ingresoform" name="ingfor" action="/product/add" method="POST" enctype="multipart/form-data">
 					<div class="divform">
-						<div class="marcd1" id="primdiv">
-							<label class="Llc">Nombre del reloj: </label>
-							<input class="inpp inppppp1" type="text" name="nom" id="n1">
+						<div class="marcd1" id="">
+							<label class="">Nombre del reloj:</label>
+							<input class="inpp inpppp1" type="text" name="nombre" id="n1" value="<%= detalle.nombre %>">
 						</div>
-                        <div class="marcd2" id="primdiv">
-							<label class="Llc">Descripción: </label>
-							<input class="inpp inppppp2" type="text" name="nom" id="n1">
+						<div class="marcd">
+							<label class="">Descripción:</label>
+							<input class="inpp inpppp2" type="text" name="descripcion" id="c1" value="<%= detalle.descripcion %>">
+						</div>
+						<div class="marcd2">
+							<label class="">Imagen del producto:</label>
+							<input class="inpp inpppp3" type="file" name="imagen" id="c1">
+						</div>
+						<div class="divterminos">
 						</div>
 						<div class="noar">
-						<input type="submit" class="bot" id="botonFin" value="Agregar reloj"></div>
+						<input type="submit" class="bot" id="" value="Guardar cambios"></div>
 					</div>
 				</form>
 			</h2>

@@ -18,7 +18,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= detalle.nombre %></h2> 
 			 <p class="product-detail-description"><% if (locals.user != null && locals.user.id == detalle.user_id){ %>
-				<a class="edit-prod" href="/product/edit">Editar</a>
+				<a class="edit-prod" href="/product/edit/<%= detalle.id %>">Editar</a>
 				<form action="/product/delete/<%= detalle.id %>" method="POST">
 					<button type="submit">Borrar</button>
 				</form>

@@ -20,10 +20,12 @@ router.get('/id/:id', productController.product);
 //router.get('/add', productController.productAdd);
 router.post('/store', productController.store);
 router.post('/delete/:id', productController.destroy);
-router.get('/edit', productController.productEdit);
+
+router.get('/edit/:id', productController.productEdit);
+router.post('/edit', upload.single("imagen"), productController.update);
+
 router.get('/add', productController.show);
-router.post('/edit', upload.single("imagen"), productController.productEdit);//aca
-router.post('/add', upload.single("imagen"), productController.store);//aca
+router.post('/add', upload.single("imagen"), productController.store);
 
 
 module.exports = router;
