@@ -167,6 +167,32 @@ const productController = {
                 console.log(error);
             })
     },
+    storeComentarios: function(req, res){
+        let errors={}
+        if(req.body.comentario == ""){
+            errors.message = "Es necesario un comentario";
+            res.locals.errors = errors;
+            return res.render('product')
+        //Chequear que el comentario no esté vacío    
+        } else{
+        //Método para guardar nueva película.
+        //1) Obtener datos del formulario
+        //2)Crear pelicula nueva.
+        let comentario = {
+            comentario: req.body.comentario,          
+            user_id: req.session.user.id,
+            product_id: 1, //pasar id del producto
+        }
+        //3)Guardar película
+        db.Comment.create(comentario)
+            .then( (nuevoComentario) => {
+        //4)Redirección
+                return res.redirect('/');
+            })
+            .catch(error => {
+                console.log(error);
+            })}
+    },
 
 }
 
