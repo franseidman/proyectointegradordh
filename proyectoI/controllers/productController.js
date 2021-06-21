@@ -37,7 +37,7 @@ const productController = {
     },
     update: function(req, res){
         
-        let product = {           
+        let product = {         
             user_id: req.session.user.id, //req.session.user_id
             imagen: req.file.filename,
             nombre: req.body.nombre,
@@ -59,14 +59,14 @@ const productController = {
         } else {
             product.descripcion = req.body.descripcion;
         }
-
+        
         db.Product.update(product, {
             where:{
                 id: req.params.id
             }
         })
             .then(function(id){
-                
+
                 //NO SABEMOS QUE FALTARÍA ESCRIBIR ACÁ
                 return res.redirect('/');
                 
