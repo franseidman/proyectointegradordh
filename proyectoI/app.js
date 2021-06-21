@@ -31,12 +31,12 @@ app.use(session(
 ));
 
 app.use(function(req, res, next){
-  console.log('En session middleware');
-  console.log(req.session.user);
+  //console.log('En session middleware');
+  //console.log(req.session.user);
   if(req.session.user != undefined){
     res.locals.user = req.session.user;
-    console.log("entre en locals: ");
-    console.log(res.locals);
+    //console.log("entre en locals: ");
+    //console.log(res.locals);
     return next();
   } 
   return next(); //Clave para que el proceso siga adelante.  
@@ -49,10 +49,10 @@ app.use(function(req, res, next){
     
     db.User.findByPk(idDeLaCookie)
     .then( user => {
-      console.log('en cookie middleware trasladando');
+      //console.log('en cookie middleware trasladando');
       req.session.user = user; 
-      console.log('en cookie middleware');
-      console.log(req.session.user);
+      //console.log('en cookie middleware');
+      //console.log(req.session.user);
       res.locals.user = user; 
       return next();
     })

@@ -2,14 +2,14 @@ const db = require('../database/models'); //Requerimos la conexión a la base de
 const op = db.Sequelize.Op
 
 const mainController = {
-    index: function(req, res){
+    /*index: function(req, res){
         db.User.findAll()
             .then(data =>{
                 console.log(data);
                 return res.render('index', { users: data });
             })
         //return res.render('index')
-    },
+    },*/
     register: function(req, res){
         return res.render('register')
     },
@@ -25,7 +25,7 @@ const mainController = {
     searchResults: function(req, res){
         return res.render('search-results')
     },
-    show: function(req, res){
+    /*show: function(req, res){
         let id = req.params.id;
 
         db.User.findByPk(id)
@@ -36,16 +36,19 @@ const mainController = {
                 console.log(error);
             })
         
-    } ,
+    },*/
     search: function(req, res){
         let infoABuscar = req.query.search; //obtengo la info de la querystring.
 
         db.Product.findAll({
             //SELECT * FROM movies
             //WHERE title LIKE "%potter%"
-            where: [
-                { nombre: {[op.like]: '%'+infoABuscar+'%'}}
-            ]})
+            where: {
+                [op.or]: [
+                { nombre: {[op.like]: '%'+infoABuscar+'%'} }, 
+                { descripcion: {[op.like]: '%'+infoABuscar+'%'} }
+            ]
+            }})
             .then( data => {
                 return res.render('search-results',{products: data});
             })
@@ -54,10 +57,14 @@ const mainController = {
             })
     },
     novedades: function(req, res){
-        //let infoABuscar = req.query.search; //obtengo la info de la querystring.
 
+        //let infoABuscar = req.query.search; //obtengo la info de la querystring.
         db.Product.findAll({
+            include : [
+                {association : 'comentariosproducto'}
+            ],
             //SELECT * FROM movies
+            order: [['id', 'desc']]
             })
             .then( data => {
                 return res.render('index',{products: data}); //se la mandamos a la vista adentro de un objeto
