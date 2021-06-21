@@ -21,6 +21,9 @@
 				<div class="todo">
 				<form id="ingresoform" name="ingfor" action="/product/add" method="POST" enctype="multipart/form-data">
 					<div class="divform">
+						<% if(locals.errors){ %>
+							<p style="color:red"><%= locals.errors.message %> </p>
+						<% } %>
 						<div class="marcd1" id="">
 							<label class="">Nombre del reloj:</label>
 							<input class="inpp inpppp1" type="text" name="nombre" id="n1">

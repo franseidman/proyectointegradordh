@@ -26,6 +26,10 @@ let registerController = {
             res.locals.errors = errors;
             return res.render('register')
         //Chequear que la contraseña no esté vacía    
+        } else if(req.file == null){
+            errors.message = "Es necesario una foto de perfil";
+            res.locals.errors = errors;
+            return res.render('register')
         } else if(req.file.mimetype !== 'image/png' && req.file.mimetype !== 'image/jpg' && req.file.mimetype !== 'image/jpeg'){
             errors.message = "El formato del archivo no es compatible";
             res.locals.errors = errors;

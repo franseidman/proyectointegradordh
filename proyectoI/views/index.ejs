@@ -39,9 +39,9 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			
-			<ul>
-				<% for(let i=0; i<5; i++){ %>
-				  <li>
+			
+				<% for(let i=0; i<8; i++){ %>
+				  
 					<div class="col-12 col-sm-6 col-lg-3">
 						<section class="product-box">
 							<a href="/product/id/<%= products[i].id %>">
@@ -51,72 +51,13 @@
 								<article class="product-box_data">
 									<h2><%= products[i].nombre %></h2>
 									<p><%= products[i].descripcion %></p>
-									<p>Comentarios: 12  [REVISAR]</p>
+									<p><%= products[i].comentariosproducto.length %> comentarios</p>
 								</article>
 							</a>
 						</section>
 					</div>
-					
-				  </li>
+				
 				<% } %> 
-			</ul>
-			
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="images/products/Panerai1.jpg" alt="Panerai">
-						</figure>
-						<article class="product-box_data">
-							<h2>Luminor Panerai</h2>
-							<p>Mecánico automático, calibre P.9200, íntegramente realizado por Panerai, 13 ¼ líneas, 6,25 mm de espesor, 17 rubíes, volante Glucydur®, 28 800 alternancias/hora. Dispositivo antichoque Incabloc®. Reserva de marcha de 42 horas, un barrilete.</p>
-							<p>Comentarios: 6</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="images/products/Rolex1.jpg" alt="Rolex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Rolex GMT-Master II</h2>
-							<p>Diseñado para mostrar la hora en dos husos horarios simultáneamente, el GMT‑Master, presentado en 1955, se desarrolló originalmente como un instrumento de navegación para los profesionales que recorren el mundo.</p>
-							<p>Comentarios: 14</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="images/products/Panerai2.jpg" alt="Panerai">
-						</figure>
-						<article class="product-box_data">
-							<h2>Luminor GMT</h2>
-							<p>Tomando como inspiración la caja del histórico Luminor 1950, creada para los comandos submarinos de la Armada italiana, el Luminor reinterpreta estas proporciones clásicas de una manera contemporánea, conservando todas las características que, con los años, han hecho de este reloj un icono de la relojería deportiva de lujo.</p>
-							<p>Comentarios: 5</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="images/products/Rolex2.jpg" alt="Rolex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Rolex Yacht-Master II</h2>
-							<p>Inspirado en el rico patrimonio que ha unido Rolex con el mundo de la navegación desde los años cincuenta, el Yacht‑Master II reúne la excelente tecnología de Rolex para crear un cronógrafo de regata diseñado para las competiciones de vela.</p>
-							<p>Comentarios: 38</p>
-						</article>
-					</a>
-				</section>
-			</div>
 		</div>
 	</div>
 	<!-- /Novedades -->

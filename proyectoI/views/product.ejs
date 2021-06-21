@@ -40,23 +40,42 @@
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 							<ul>
+							<% if(detalle.comentariosproducto.length < 10){ %> 
 							<% for(let i=0; i<detalle.comentariosproducto.length; i++){ %>
 								<article>
 									<img src="images/users/profile.jpg" alt="profile image">
 									<div class="data">
 										<p class="user">
-										<strong> <a href="/profile"><%= detalle.comentariosproducto[i].usuariodelcomentario.username %></a> </strong>
+										<strong> <a href="/profile/id/<%= detalle.comentariosproducto[i].usuariodelcomentario.id %>"><%= detalle.comentariosproducto[i].usuariodelcomentario.username %></a> </strong>
 										<%= detalle.comentariosproducto[i].comentario %></p>
 									</div>
 								</article>
-							<% } %> 
+							<% } %>
+							<% } else { %>
+								<% for(let i=0; i<10; i++){ %>
+									<article>
+										<img src="/images/users/<%= detalle.comentariosproducto[i].usuariodelcomentario.imagen %> " alt="profile image">
+										<div class="data">
+											<p class="user">
+											<strong> <a href="/profile/id/<%= detalle.comentariosproducto[i].usuariodelcomentario.id %>"><%= detalle.comentariosproducto[i].usuariodelcomentario.username %></a> </strong>
+											<%= detalle.comentariosproducto[i].comentario %></p>
+										</div>
+									</article>
+								<% } %>
+							<% } %>
 							</ul>
 
 					</section>
-					<form class="form" action="/product/storeComentarios" method="POST">
+					<% if(locals.user){ %> 
+					<form class="form" action="/product/storeComentarios/<%= detalle.id %> " method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
+					<% } else { %>
+						<form class="form">
+							<input class="form-input" type="text" value="" placeholder="Inicie sesión para comentar" name="comentario" disabled>
+						</form>
+						<% } %> 
 					<hr>
 				</div>
 			</div>

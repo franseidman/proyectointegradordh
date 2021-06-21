@@ -18,13 +18,13 @@
 			<!-- Show the "ultimos" products -->
 			<div class="row">
 				<!-- Show the "ultimos" products -->
-				<ul>
+				
 					<% for(let i=0; i<products.length; i++){ %>
-					  <li>
+					  
 						  
 						<div class="col-12 col-sm-6 col-lg-3">
 							<section class="product-box">
-								<a href="/product">
+								<a href="/product/id/<%= products[i].id %> ">
 									<figure class="product-box_image">
 										<img src="/images/products/<%= products[i].imagen %>" alt="<%= products[i].nombre %>">
 									</figure>
@@ -37,9 +37,9 @@
 							</section>
 						</div>
 						
-					  </li>
+					  
 					<% } %> 
-				</ul>
+				
 			</div>
 		</div>
 	</div>
