@@ -31,9 +31,9 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<div class="img-prod">
 					<img src="/images/products/<%= detalle.imagen %>" alt="Detalle Imagen">
-					<h2>Cargado por: <%= detalle.owner.username %></h2> 
 					</div>
 					<div class="product-detail-description-noedit">
+					<h4><a href="/profile/id/<%= detalle.owner.id %>">Cargado por: <%= detalle.owner.username %></a></h4>
 					<p class="desc-prod">
 						<%= detalle.descripcion %></p></div>
 				</article>
