@@ -38,15 +38,15 @@
 						<li><a href="/product/add">Publicar Productos</a></li>
                     <%}%>
 				</ul>
-	
+
 				<ul class="right-navbar">
 					<% if(locals.user){ %>
 						<li><a href="/profile/id/<%= locals.user.id %> ">
-							LNorris4 <i class="fas fa-user"></i>
+							<%= locals.user.username %> <i class="fas fa-user"></i>
 						</a>
 						</li>
 						<form action="/login/logout" method="POST">
-                          <button type="submit">Cerrar Sesión</button>
+                          <button type="submit" class="logout">Cerrar Sesión</button>
                         </form>
                       <%} else {%>
                         <li>

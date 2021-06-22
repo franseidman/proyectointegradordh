@@ -18,9 +18,10 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
 				<div class="todo">
-					<img class="fotoPerfil" src="/images/users/<%= user.imagen %>">
+					
 				<form id="ingresoform" name="ingfor" action="/register/edit" method="POST" enctype="multipart/form-data">
 					<div class="divform">
+						<img class="fotoPerfil3" src="/images/users/<%= user.imagen %>">
 						<div class="marcd1" id="primdiv">
 							<label class="Llc">Nombre de usuario:</label>
 							<input class="inp1 inpp" type="text" name="username" id="n1" value="<%= user.username %>">
@@ -34,8 +35,8 @@
 							<input class="inpp inpp3" type="password" name="contrasena" id="c1">
 						</div>
 						<div class="marcd">
-							<label class="">Cambiar imagen de perfil:</label>
-							<input class="inp2 inpp" type="file" id="c1" name="imagen">
+							<label class="">Imagen de perfil:</label>
+							<input class="inp8 inpp" type="file" id="c1" name="imagen">
 						</div>
 						<div class="marcd">
 							<label class="">Fecha de nacimiento:</label>
@@ -48,7 +49,6 @@
 						</div>
 						<div class="noa">
 						<input type="submit" class="bot" value="Guardar Cambios">
-						<input type="submit" class="bot" value="Olvidé mi contraseña">
 						</div>
 					</div>
 				</form>

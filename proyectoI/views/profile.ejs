@@ -11,22 +11,29 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="/images/users/<%= user.imagen %>" alt="foto de perfil" class="foto-perfil">
+				<img src="/images/users/<%= user.imagen %>" alt="foto de perfil" class="fotoPerfil2">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"><%= user.username %>  
-						<a href="/register/edit/<%= user.id %>">
-							<i class="fas fa-cog"></i>
+						<a class="edita" href="/register/edit/<%= user.id %>">
+							<i class="fas fa-cog edit"></i>
 						</a>
 					</h1>
-					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+					<!-- <a class="btn mt-3 ml-4" href="">SEGUIR</a> -->
 				</div>
 				<div>
 					<ul class="">
-						<li>8 productos</li>
-						<li>200 seguidores</li>
-						<li>300 comentarios</li>
+						<li><% let prods=0 %>
+						<%for (let index = 0; index < user.productodelusuario.length+1; index++) {
+							prods = index;
+							
+						}  %> <%= prods %> productos</li>
+						<% let comments=0 %>
+						<%for (let index = 0; index < user.comentariodelusuario.length+1; index++) {
+							comments = index;
+							
+						}  %> <%= comments %> comentarios</li>
 					</ul>
 				</div>
 			</div>
