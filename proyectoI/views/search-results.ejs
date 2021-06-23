@@ -12,13 +12,17 @@
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
+			<% if(products != ""){ %>
 			<div class="col-12">
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
+			<% } %>
 			<!-- Show the "ultimos" products -->
 			<div class="row">
 				<!-- Show the "ultimos" products -->
-				
+				<% if(products.length==0){ %>
+					<div class="noresult"><p>No hay resultados</p></div>
+				<% } %> 
 					<% for(let i=0; i<products.length; i++){ %>
 					  
 						  
@@ -31,7 +35,7 @@
 									<article class="product-box_data">
 										<h2><%= products[i].nombre %></h2>
 										<p><%= products[i].descripcion %></p>
-										<p>Comentarios: 12  [REVISAR]</p>
+										<p>Comentarios: <%= products[i].comentariosproducto.length %></p>
 									</article>
 								</a>
 							</section>
@@ -39,9 +43,7 @@
 						
 					  
 					<% } %> 
-					<% if(products.length==0){ %>
-						<div class="noresult"><p>No hay resultados</p></div>
-					<% } %> 
+					
 				
 			</div>
 		</div>

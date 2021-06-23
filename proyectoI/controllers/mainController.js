@@ -43,6 +43,9 @@ const mainController = {
         db.Product.findAll({
             //SELECT * FROM movies
             //WHERE title LIKE "%potter%"
+            include : [
+                {association : 'comentariosproducto'}
+            ],
             where: {
                 [op.or]: [
                 { nombre: {[op.like]: '%'+infoABuscar+'%'} }, 

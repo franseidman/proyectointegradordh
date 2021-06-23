@@ -17,7 +17,6 @@ const profileController = {
             ]
         })
             .then(data =>{
-                
                 return res.render('profile', { user: data });
             })
             .catch(error =>{

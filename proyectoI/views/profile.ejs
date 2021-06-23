@@ -23,17 +23,18 @@
 					<!-- <a class="btn mt-3 ml-4" href="">SEGUIR</a> -->
 				</div>
 				<div>
-					<ul class="">
+					<ul class="detalleuser">
 						<li><% let prods=0 %>
 						<%for (let index = 0; index < user.productodelusuario.length+1; index++) {
 							prods = index;
 							
 						}  %> <%= prods %> productos</li>
-						<% let comments=0 %>
+						<li><% let comments=0 %>
 						<%for (let index = 0; index < user.comentariodelusuario.length+1; index++) {
 							comments = index;
 							
 						}  %> <%= comments %> comentarios</li>
+						<li>Miembro desde: <%= user.createdAt.toLocaleDateString() %></li>
 					</ul>
 				</div>
 			</div>
