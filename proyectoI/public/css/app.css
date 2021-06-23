@@ -878,3 +878,12 @@ header .overlay {
   margin-left: 489px;
   padding-bottom: 10px;
 }
+.msjerror{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+.diverr{
+  width: 100%;
+}

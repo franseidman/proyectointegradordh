@@ -21,9 +21,6 @@
 				<div class="todo">
 				<form id="ingresoform" name="ingfor" action="/product/add" method="POST" enctype="multipart/form-data">
 					<div class="divform">
-						<% if(locals.errors){ %>
-							<p style="color:red"><%= locals.errors.message %> </p>
-						<% } %>
 						<div class="marcd1" id="">
 							<label class="">Nombre del reloj:</label>
 							<input class="inpp inpppp1" type="text" name="nombre" id="n1">
@@ -39,7 +36,10 @@
 						<div class="divterminos">
 						</div>
 						<div class="noar">
-						<input type="submit" class="bot" id="" value="Agregar reloj"></div>
+						<input type="submit" class="bot" id="" value="Publicar reloj"></div>
+						<% if(locals.errors){ %>
+							<div class="diverr"><p style="color:rgb(255, 64, 64)" class="msjerror"><%= locals.errors.message %> </p></div>
+						<% } %>
 					</div>
 				</form>
 				</div>

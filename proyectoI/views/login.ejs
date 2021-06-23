@@ -18,9 +18,6 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
 				<div class="todo">
-					<% if(locals.errors){ %>
-						<p style="color:red"><%= locals.errors.message %> </p>
-					<% } %>
 				
 				<form id="ingresoform" name="ingfor" action="/login" method="POST">
 					<div class="divform">
@@ -38,7 +35,11 @@
 						</p> -->
 						<div class="noar">
 						<input type="submit" class="bot" value="Iniciar Sesión"></div>
+						<% if(locals.errors){ %>
+							<div class="diverr"><p style="color:rgb(255, 64, 64)" class="msjerror"><%= locals.errors.message %> </p></div>
+						<% } %>
 					</div>
+					
 				</form>
 				</div>
 			</h2>
