@@ -28,12 +28,12 @@
 						<%for (let index = 0; index < user.productodelusuario.length+1; index++) {
 							prods = index;
 							
-						}  %> <%= prods %> productos</li>
+						}  %> <%= prods %> <% if(prods == 1){%> Producto<%} else {%> Productos<%}%></li>
 						<li><% let comments=0 %>
 						<%for (let index = 0; index < user.comentariodelusuario.length+1; index++) {
 							comments = index;
 							
-						}  %> <%= comments %> comentarios</li>
+						}  %> <%= comments %> <% if(comments == 1){%> Comentario<%} else {%> Comentarios<%}%></li>
 						<li>Miembro desde: <%= user.createdAt.toLocaleDateString() %></li>
 					</ul>
 				</div>
@@ -60,7 +60,7 @@
 								<article class="product-box_data">
 									<h2><%= user.productodelusuario[i].nombre %> </h2>
 									<p><%= user.productodelusuario[i].descripcion %></p>
-									<p>Comentarios: <%= user.productodelusuario[i].comentariosproducto.length %></p>
+									<p><%= user.productodelusuario[i].comentariosproducto.length %><% if(user.productodelusuario[i].comentariosproducto.length == 1){ %> Comentario <% } else {%> Comentarios<%}%></p>
 								</article>
 							</a>
 						</section>
