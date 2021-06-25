@@ -83,7 +83,7 @@ let registerController = {
 
             }
 
-    },
+    }, //FRAN
     profileEdit: function(req, res){
         let id = req.params.id;
 
@@ -99,7 +99,7 @@ let registerController = {
                 .catch( e => {console.log(e)})
         }
     },
-    update: function(req, res){
+    update: function(req, res){ //LUCAS
         
         let user = {
             username : req.body.username,
@@ -135,6 +135,6 @@ let registerController = {
             })
             .catch( e => {console.log(e)})
     }
-}
+} //HASTA ACÁ LUCAS
 
 module.exports = registerController;

@@ -3,7 +3,7 @@ const db = require('../database/models');
 
 const op = db.Sequelize.Op;
 
-let loginController = {
+let loginController = { //LUCAS
     index: function(req, res){
         if(req.session.user != undefined){
             res.redirect("/")
@@ -12,9 +12,8 @@ let loginController = {
         return res.render('login');
         }
     },
-    //AAAAAAAAAAVERSIANDAA
+
     login: function(req, res){
-        //Buscar mail
 
         // Buscar el usuario que se quiere loguear.
         db.User.findOne({

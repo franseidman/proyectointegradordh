@@ -1,11 +1,12 @@
 var createError = require('http-errors');
-var express = require('express');
+var express = require('express'); //REQUERIMOS EXPRESS
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const session = require('express-session'); 
-const db = require('./database/models');
+const session = require('express-session'); //REQUERIMOS SESSION
+const db = require('./database/models'); //REQUERIMOS LOS MODELOS
 
+//RUTEADORES
 var indexRouter = require('./routes/index');
 var profileRouter = require('./routes/profile');
 var productRouter = require('./routes/product');
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//SESSION 
 app.use(session(
   { secret:'watch24',
     resave: false,
@@ -31,28 +33,21 @@ app.use(session(
 ));
 
 app.use(function(req, res, next){
-  //console.log('En session middleware');
-  //console.log(req.session.user);
   if(req.session.user != undefined){
     res.locals.user = req.session.user;
-    //console.log("entre en locals: ");
-    //console.log(res.locals);
     return next();
   } 
   return next(); //Clave para que el proceso siga adelante.  
 })
 
-
+//COOKIES
 app.use(function(req, res, next){
   if(req.cookies.userId != undefined && req.session.user == undefined){
     let idDeLaCookie = req.cookies.userId;
     
     db.User.findByPk(idDeLaCookie)
     .then( user => {
-      //console.log('en cookie middleware trasladando');
       req.session.user = user; 
-      //console.log('en cookie middleware');
-      //console.log(req.session.user);
       res.locals.user = user; 
       return next();
     })
@@ -62,6 +57,7 @@ app.use(function(req, res, next){
   }
 })
 
+//RUTAS
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
 app.use('/', indexRouter);

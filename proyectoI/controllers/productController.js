@@ -21,9 +21,6 @@ const productController = {
                 console.log(error);
             })
     },
-    /*productAdd: function(req, res){
-        return res.render('product-add')
-    },*/
     productEdit: function(req, res){
         db.Product.findByPk(req.params.id, {
         })
@@ -42,7 +39,7 @@ const productController = {
             .then( detalle => {
               
                 let product = {           
-                    user_id: req.session.user.id, //req.session.user_id
+                    user_id: req.session.user.id,
                     imagen: '',
                     nombre: req.body.nombre,
                     descripcion: req.body.descripcion,
@@ -71,7 +68,6 @@ const productController = {
                 })
                     .then(function(id){
                         
-                        //NO SABEMOS QUE FALTARÍA ESCRIBIR ACÁ
                         return res.redirect(`/product/id/${detalle.id}`);
                         
                     })
@@ -98,23 +94,6 @@ const productController = {
             })
         }
     },
-    /*show: function(req, res){
-        let id = req.params.id;
-
-        db.Product.findByPk(id, {
-            include : [
-                {association : 'owner'},
-                {association : 'comments'}
-            ]
-        })
-            .then(data =>{
-                return res.render('product', { product: data });
-            })
-            .catch(error =>{
-                console.log(error);
-            })
-        
-    },*/
     store: function(req, res){
         console.log(req);
         let errors={}
@@ -137,16 +116,16 @@ const productController = {
             res.locals.errors = errors;
             return res.render('product-add')
         } else{
-        //Método para guardar nueva película.
+        //Método para guardar nuevo producto.
         //1) Obtener datos del formulario
-        //2)Crear pelicula nueva.
+        //2)Crear producto nuevo.
         let product = {           
-            user_id: req.session.user.id, //req.session.user_id
+            user_id: req.session.user.id,
             imagen: req.file.filename,
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
         }
-        //3)Guardar película
+        //3)Guardar producto
         db.Product.create(product)
             .then( (nuevoProducto) => {
         //4)Redirección
@@ -194,15 +173,13 @@ const productController = {
                     return res.render('product')
                 //Chequear que el comentario no esté vacío    
                 } else{
-                //Método para guardar nueva película.
-                //1) Obtener datos del formulario
-                //2)Crear pelicula nueva.
+            
                 let comentario = {
                     comentario: req.body.comentario,          
                     user_id: req.session.user.id,
                     product_id: detalle.id, //pasar id del producto
                 }
-                //3)Guardar película
+            
                 db.Comment.create(comentario)
                     .then( (nuevoComentario) => {
                 //4)Redirección
