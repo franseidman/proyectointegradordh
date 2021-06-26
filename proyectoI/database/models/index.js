@@ -34,4 +34,4 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-module.exports = db;
+module.exports = db; //Exportamos el objeto db para requerirlo cada vez que necesitemos utilizar sequeliza para realizar consultas a nuestra base de datos.
